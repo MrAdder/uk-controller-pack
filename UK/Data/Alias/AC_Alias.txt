@@ -85,19 +85,20 @@ Handoffs
 .fc Freecall $radioname($1) ($atccallsign($1)) $freq($1)
 .mon Monitor $radioname($1) ($atccallsign($1)) $freq($1)
 
-.cmof Continue with Unicom, 122.800. Contact me on $com once on final runway $arrrwy($arr). 
-.cmov Continue with Unicom, 122.800. Contact me on $com once vacated. 
+.cmof Continue with advisory, 122.800. Contact me on $com once on final runway $arrrwy($arr). 
+.cmov Continue with advisory, 122.800. Contact me on $com once vacated. 
 .cme Call me established
 
-.uni No Further ATC available. Monitor Unicom 122.800
-.oma You are currently outside my airspace. Monitor Unicom 122.800. (Please see https://vatglasses.uk/ukireland/)
-.nso $1 is offline - monitor unicom 122.800
+.adv No Further ATC available. Monitor advisory 122.800
+.oma You are currently outside my airspace. Monitor advisory 122.800. (Please see https://vatglasses.uk/ukireland/)
+.nso $1 is offline - monitor advisory 122.800
+.uni In line with the updated Code of Conduct, "advisory" is now used in place of "UNICOM" when no further ATC is available.
 
 .fca Frequency Change Approved. 
 .fe Freecall on route. 
 
 .cl ALL STATIONS, ALL STATIONS, $callsign is now closing. Monitor $radioname($1) ($atccallsign($1)) $freq($1)
-.cluni ALL STATIONS, ALL STATIONS, $callsign is now closing. No other ATC available, Monitor Unicom, 122.800
+.cluni ALL STATIONS, ALL STATIONS, $callsign is now closing. No other ATC available, Monitor Advisory, 122.800
 
 .833 You have been transferred to an 8.33 kHz frequency. If your aircraft's radio does not allow you to tune the exact frequency, you can use the .com1 command in your pilot client to manually tune it. Visit vats.im/833 for more details 
 
