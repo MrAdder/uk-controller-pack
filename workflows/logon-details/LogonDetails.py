@@ -741,19 +741,20 @@ def main():
             discord_presence=options.get("discord_presence", "n")
         )
 
-        configure_advanced = ask_yesno("Would you like to configure advanced options?")
         applied_advanced = False
 
-        if configure_advanced:
-            for key in ADVANCED_FIELDS:
-                options[key] = prompt_for_field(key, options.get(key, DEFAULT_FIELDS[key]))
-            apply_advanced_configuration(options)
-            applied_advanced = True
-        elif loaded_previous_advanced:
+        if loaded_previous_advanced:
             for key in ADVANCED_FIELDS:
                 options.setdefault(key, DEFAULT_FIELDS[key])
             apply_advanced_configuration(options)
             applied_advanced = True
+        else:
+            configure_advanced = ask_yesno("Would you like to configure advanced options?")
+            if configure_advanced:
+                for key in ADVANCED_FIELDS:
+                    options[key] = prompt_for_field(key, options.get(key, DEFAULT_FIELDS[key]))
+                apply_advanced_configuration(options)
+                applied_advanced = True
 
         options_to_save = {key: options.get(key, DEFAULT_FIELDS[key]) for key in BASIC_FIELDS}
 
