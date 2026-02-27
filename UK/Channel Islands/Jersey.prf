@@ -55,7 +55,7 @@ LastSession	atis_url1	https://www.vatatis.nz/gen?apptype=ILS&arr=$arrrwy($atisai
 LastSession	atis_url2	https://www.vatatis.nz/gen?apptype=ILS&arr=$arrrwy($atisairportC)&dep=$deprwy($atisairportC)&metar=$metar($atisairportC)
 LastSession	atis_url3	https://www.vatatis.nz/gen?apptype=ILS&arr=$arrrwy($atisairportD)&dep=$deprwy($atisairportD)&metar=$metar($atisairportD)
 LastSession	atis_freq0	134675
-LastSession	atis_callsign0	EGJJ_ATIS
+LastSession	atis_callsign0	EGJJJ_ATIS
 LastSession	atis_callsign1	EGJB_ATIS
 LastSession	atis_freq1	118900
 TeamSpeakVccs	TsVccsMiniControlX	697
