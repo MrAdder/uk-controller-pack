@@ -9,7 +9,7 @@ Settings	SettingsfileSEL	\..\Data\Settings\Lists.txt
 Settings	SettingsfileDEP	\..\Data\Settings\Lists.txt
 Settings	SettingsfileARR	\..\Data\Settings\Lists.txt
 Settings	SettingsfileFP	\..\Data\Settings\Lists.txt
-Settings	SettingsfilePLUGINS	\..\Data\Settings\Local\Channel Islands\Plugins.txt
+Settings	SettingsfilePLUGINS	\..\Data\Settings\Local\Channel Isslands\Plugins.txt
 Settings	Settingsfile	\..\Data\Settings\TC_APP\TC_APP_General.txt
 Settings	SettingsfileSCREEN	\..\Data\Settings\Screen.txt
 Settings	SectorFileProviderDescriptor	\..\Data\Sector\VATUK_SectorFileProviderDescriptor.txt
