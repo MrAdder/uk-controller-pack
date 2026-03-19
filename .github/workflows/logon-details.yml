@@ -18,10 +18,10 @@ jobs:
       build: ${{ steps.filter.outputs.build }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Check for changes
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
@@ -38,7 +38,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.VATSIM_UK_GITHUB_TOKEN }}
 
@@ -46,7 +46,7 @@ jobs:
         run: git pull --ff-only
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 

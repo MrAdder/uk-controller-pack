@@ -57,13 +57,13 @@ jobs:
         touched: ${{ steps.changed.outputs.touched }}
     steps:
       - name: 🧰 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           persist-credentials: true
 
       - name: 🐍 Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -134,7 +134,7 @@ jobs:
 
       - name: 📦 Upload artifact (PRs only)
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: airspace-geojson
           path: ${{ env.GEOJSON_OUT }}
@@ -217,7 +217,7 @@ jobs:
       BRANCH: auto/update-egxx-geojson
     steps:
       - name: 🧰 Checkout uk-controller-pack
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 

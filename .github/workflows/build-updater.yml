@@ -1,4 +1,4 @@
-name: Compile Controller-Pack-Updater.exe
+﻿name: Compile Controller-Pack-Updater.exe
 
 on:
   push:
@@ -14,15 +14,15 @@ permissions:
 jobs:
   changes:
     name: Check for changes
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     outputs:
       build: ${{ steps.filter.outputs.build }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Check for changes
-        uses: dorny/paths-filter@v3
+        uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
@@ -44,12 +44,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.VATSIM_UK_GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 

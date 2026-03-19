@@ -18,7 +18,7 @@ jobs:
       full_tag: ${{ steps.get_release_tag.outputs.tag }}
     steps:
       - name: 👥 Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -64,13 +64,13 @@ jobs:
           zip -r "uk_controller_pack_${{ steps.get_release_tag.outputs.tag }}.zip" UK/ -x "*.py"
 
       - name: 📤 Upload Full Pack Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: uk_controller_pack_${{ steps.get_release_tag.outputs.tag }}
           path: uk_controller_pack_${{ steps.get_release_tag.outputs.tag }}.zip
 
       - name: 🚀 Upload Full ZIP to GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: uk_controller_pack_${{ steps.get_release_tag.outputs.tag }}.zip
           tag_name: ${{ steps.get_release_tag.outputs.tag }}
@@ -82,7 +82,7 @@ jobs:
       changes_tag: ${{ steps.tags.outputs.latest_tag }}
     steps:
       - name: 👥 Checkout Repository with Full History
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -217,14 +217,14 @@ jobs:
 
       - name: 📤 Upload Changes-only ZIP Artifact
         if: steps.analyze.outputs.changes_exist == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: changes_only_${{ steps.tags.outputs.latest_tag }}
           path: changes_only_${{ steps.tags.outputs.latest_tag }}.zip
 
       - name: 🚀 Upload Changes-only ZIP to GitHub Release
         if: steps.analyze.outputs.changes_exist == 'true'
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: changes_only_${{ steps.tags.outputs.latest_tag }}.zip
           tag_name: ${{ steps.tags.outputs.latest_tag }}
@@ -234,7 +234,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 👥 Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: 🏷️ Get Release Tag
         id: get_release_tag
